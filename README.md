@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Gianguyen1234
 - 👀 I’m interested in Android 
-- 🌱 I’m currently learning Jetpack  
+- 🌱 I’m currently learning Jetpack compose 
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...
 
