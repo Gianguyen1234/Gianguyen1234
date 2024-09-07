@@ -1,15 +1,12 @@
 
 # Enthusiastic Developer | PHP & Laravel Learner | WordPress Enthusiast | Blogger
-
 ### Hi! I'm Thao Nguyen, an enthusiastic developer with an insatiable appetite for learning and exploring new technologies. I'm currently diving into PHP and learning the ropes of Laravel, alongside building dynamic WordPress websites. I thrive on the thrill of solving complex problems and developing new skills with each project. Check out my blogs:
-
 # KafkaBlog: 
-A community-driven space where language learners and tech enthusiasts converge. Explore it here: [KafkaBlog](https://kafkablog.kesug.com/)
-
+#### A community-driven space where language learners and tech enthusiasts converge. Explore it here: [KafkaBlog](https://kafkablog.kesug.com/)
 # Hashnode Blog:  
-My personal space where I document my coding journey, explore the latest in web development, and share tips and tricks: [Harry Page on Hashnode](https://harrypage.hashnode.dev/)
+#### My personal space where I document my coding journey, explore the latest in web development, and share tips and tricks: [Harry Page on Hashnode](https://harrypage.hashnode.dev/)
 
-Let’s code, learn, and grow together!
+#### Let’s code, learn, and grow together!
 
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=thaonguyen&show_icons=true&theme=radical)
