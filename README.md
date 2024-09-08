@@ -11,7 +11,7 @@
 #### Let’s code, learn, and grow together!
 
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=thaonguyen&show_icons=true&theme=radical)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=gianguyen1234&show_icons=true&theme=radical)
 
 # 💻 Tech Stack:
 <img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original-wordmark.svg" title="Java" alt="Java" width="40" height="40"/>&nbsp; <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML5" width="40" height="40"/>&nbsp;
