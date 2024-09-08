@@ -3,10 +3,9 @@
 ## 🌐 Socials: [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?logo=Reddit&logoColor=white)](https://reddit.com/user/Basic_War_8890)   [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/20553682)  [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@UCJEPYkCywpdeaNqPgN9pupA) 
 
 ### Hi! I'm Thao Nguyen, an enthusiastic developer with an insatiable appetite for learning and exploring new technologies. I'm currently diving into PHP and learning the ropes of Laravel, alongside building dynamic WordPress websites. I thrive on the thrill of solving complex problems and developing new skills with each project. Check out my blogs:
-# KafkaBlog: 
-#### A community-driven space where language learners and tech enthusiasts converge. Explore it here: [KafkaBlog](https://kafkablog.kesug.com/)
-# Hashnode Blog:  
-#### My personal space where I document my coding journey, explore the latest in web development, and share tips and tricks: [Harry Page on Hashnode](https://harrypage.hashnode.dev/)
+## KafkaBlog: A community-driven space where language learners and tech enthusiasts converge. Explore it here: [KafkaBlog](https://kafkablog.kesug.com/)
+
+## Hashnode Blog: My personal space where I document my coding journey, explore the latest in web development, and share tips and tricks: [Harry Page on Hashnode](https://harrypage.hashnode.dev/)
 
 #### Let’s code, learn, and grow together!
 
