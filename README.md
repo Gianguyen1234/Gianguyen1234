@@ -9,7 +9,7 @@
 ## 👋 Hi! I'm Thao Nguyen, an enthusiastic developer with an insatiable appetite for learning and exploring new technologies. I'm currently diving into PHP and learning the ropes of Laravel, alongside building dynamic WordPress websites. I thrive on the thrill of solving complex problems and developing new skills with each project. Check out my blogs:
 ### KafkaBlog: The language learning community. Explore it here: [KafkaBlog](https://kafkablog.kesug.com/)
 
-### Hashnode Blog: My personal space where I share tips and tricks about web development: [Harry Page on Hashnode](https://harrypage.hashnode.dev/)
+### Hashnode Blog: A personal space to share tips and tricks: [Harry Page on Hashnode](https://harrypage.hashnode.dev/)
 
 ### Let’s code, learn, and grow together!
 
