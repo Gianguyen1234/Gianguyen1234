@@ -11,7 +11,7 @@
 
 ### Hashnode Blog: A personal space to share tips and tricks: [Harry Page on Hashnode](https://harrypage.hashnode.dev/)
 
-### Let’s code, learn, and grow together!
+### Relax, sitback and enjoy coding!
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=gianguyen1234&show_icons=true&theme=radical)
 
