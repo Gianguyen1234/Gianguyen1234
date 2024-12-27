@@ -1,5 +1,5 @@
 
-# Enthusiastic Developer | PHP & Laravel Learner | WordPress Enthusiast | Blogger
+# Enthusiastic Developer | React Learner | WordPress Enthusiast | Blogger
 ## 🌐 Socials: [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?logo=Reddit&logoColor=white)](https://reddit.com/user/Basic_War_8890)   [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/20553682)   
 <a href="https://www.youtube.com/@dev-maniac2349">
     <img alt="youtube channel" title="Youtube" src="https://custom-icon-badges.demolab.com/badge/@holy_dev-red.svg?logo=slyyoutube&logoColor=white"/>
