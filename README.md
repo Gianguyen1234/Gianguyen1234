@@ -9,10 +9,10 @@
   <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
 </div>
 
-## 👋 Hi! I'm Thao Nguyen, an enthusiastic developer with an insatiable appetite for learning and exploring new technologies. I'm currently diving into PHP and learning the ropes of Laravel, alongside building dynamic WordPress websites. I thrive on the thrill of solving complex problems and developing new skills with each project. Check out my blogs:
+## 👋 Hi! I'm Thao Nguyen, an enthusiastic developer with an insatiable appetite for learning and exploring new technologies. I'm currently learning React and its stack . I thrive on the thrill of solving complex problems and developing new skills with each project. 
 ### KafkaBlog: The language learning community. Explore it here: [KafkaBlog](https://kafkablog.kesug.com/)
 
-### Hashnode Blog: A personal space to share tips and tricks: [Harry Page on Hashnode](https://harrypage.hashnode.dev/)
+### Hashnode Blog: A personal space to share my experience through years: [Harry Page on Hashnode](https://harrypage.hashnode.dev/)
 
 ### Relax, sitback and enjoy coding!
 
