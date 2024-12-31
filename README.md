@@ -10,9 +10,9 @@
 </div>
 
 ## 👋 Hi! I'm Thao Nguyen, an enthusiastic developer with an insatiable appetite for learning and exploring new technologies. I'm currently learning React and its stack . I thrive on the thrill of solving complex problems and developing new skills with each project. 
-### KafkaBlog: The language learning community. Explore it here: [KafkaBlog](https://kafkablog.kesug.com/)
+### KafkaBlog - The language learning community: [KafkaBlog](https://kafkablog.kesug.com/)
 
-### Hashnode Blog: A personal space to share my experience through years: [Harry Page on Hashnode](https://harrypage.hashnode.dev/)
+### Hashnode Blog - A personal space to share my experience through years: [Harry Page on Hashnode](https://harrypage.hashnode.dev/)
 
 ### Relax, sitback and enjoy coding!
 
