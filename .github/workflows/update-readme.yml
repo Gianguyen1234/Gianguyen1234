@@ -45,8 +45,12 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git pull --rebase origin main  # Fetch latest changes
-          
+
+          # Stash changes before pulling updates
+          git stash --include-untracked
+          git pull --rebase origin main
+          git stash pop || true  # Apply stash (if exists)
+
           # Check for changes before committing
           if [[ -n $(git status --porcelain) ]]; then
             git add README.md
