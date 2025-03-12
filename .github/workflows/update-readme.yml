@@ -1,25 +1,42 @@
-name: "📚 latest Blog"
+name: "📚 Update Latest Blog"
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *" # Runs every hour, on the hour
+    - cron: "0 * * * *" # Runs every hour
 
 jobs:
   update_blogs:
-    name: "Update With Latest Blogs"
+    name: "Update README with Latest Blogs"
     runs-on: ubuntu-latest
     steps:
-      - name: "📥 Fetching Repository Contents"
+      - name: "📥 Checkout Repository"
         uses: actions/checkout@v3
 
-      - name: "📚 Hashnode Updater"
-        uses: "varunsridharan/action-hashnode-blog@1.1.1"
-        with:
-          USERNAME: "harrypage" # Your correct Hashnode username
-          COUNT: 4 # Number of latest posts to display
-          STYLE: "blog-left"
-          BLOG_URL: "https://harrypage.hashnode.dev/"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          HASHNODE_TOKEN: ${{ secrets.HASHNODE_PAT }} # Use Hashnode PAT if required
+      - name: "📚 Fetch Latest Hashnode Blog Posts"
+        run: |
+          response=$(curl -X POST https://gql.hashnode.com \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.HASHNODE_PAT }}" \
+            --data '{"query":"{ user(username: \"harrypage\") { publication { posts(first: 5) { edges { node { title, url } } } } } }"}')
+
+          echo "Hashnode API Response: $response"
+
+          posts=$(echo "$response" | jq -r '.data.user.publication.posts.edges[] | "🔗 [" + .node.title + "](" + .node.url + ")"')
+          
+          if [ -z "$posts" ]; then
+            echo "Error: No valid latest posts found!"
+            exit 1
+          fi
+
+          echo -e "<!-- BLOG-POST-LIST:START -->\n$posts\n<!-- BLOG-POST-LIST:END -->" > latest_post.md
+          
+          sed -i "/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\$(cat latest_post.md)" README.md
+
+      - name: "📤 Commit & Push Updates"
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Updated latest Hashnode blog posts" || exit 0
+          git push
