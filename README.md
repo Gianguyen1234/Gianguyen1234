@@ -31,15 +31,15 @@
       </picture>
     </td>
     <td valign="top" width="50%">
-        
-<!-- BLOG-POST-LIST:START -->
-
-<!-- BLOG-POST-LIST:END -->
     </td>
   </tr>
 </table>
 
- 
+         
+<!-- BLOG-POST-LIST:START -->
+
+<!-- BLOG-POST-LIST:END -->
+
 # 📊 GitHub Stats:
  
 ![](https://github-readme-streak-stats.herokuapp.com/?user=gianguyen1234&theme=dark&hide_border=false)   ![](https://github-readme-stats.vercel.app/api/top-langs/?username=gianguyen1234&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
