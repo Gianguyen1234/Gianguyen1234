@@ -1,42 +1,36 @@
-name: "📚 Update Latest Blog"
+name: "📚 Latest Blog Update"
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *" # Runs every hour
+    - cron: "0 * * * *" # Runs every hour, on the hour
 
 jobs:
   update_blogs:
-    name: "Update README with Latest Blogs"
+    name: "Update With Latest Blogs"
     runs-on: ubuntu-latest
     steps:
-      - name: "📥 Checkout Repository"
-        uses: actions/checkout@v3
+      - name: "📥 Fetching Repository Contents"
+        uses: actions/checkout@main
 
-      - name: "📚 Fetch Latest Hashnode Blog Posts"
+      - name: "📚 Fetch Latest Hashnode Posts"
         run: |
-          response=$(curl -X POST https://gql.hashnode.com \
+          RESPONSE=$(curl -s -X POST https://gql.hashnode.com \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer ${{ secrets.HASHNODE_PAT }}" \
-            --data '{"query":"{ user(username: \"harrypage\") { publication { posts(first: 5) { edges { node { title, url } } } } } }"}')
+            --data '{"query":"{ user(username: \"harrypage\") { publications(first: 1) { edges { node { title, posts(first: 5) { edges { node { title, url } } } } } } } }"}')
+          echo "Hashnode API Response: $RESPONSE"
+          BLOG_POSTS=$(echo "$RESPONSE" | jq -r '.data.user.publications.edges[0].node.posts.edges[] | "🔗 [" + .node.title + "]( " + .node.url + " )"')
+          echo "$BLOG_POSTS" > latest_blogs.md
 
-          echo "Hashnode API Response: $response"
+      - name: "📄 Update README with Latest Blogs"
+        run: |
+          sed -i '/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n'$BLOG_POSTS'\n<!-- BLOG-POST-LIST:END -->' README.md
 
-          posts=$(echo "$response" | jq -r '.data.user.publication.posts.edges[] | "🔗 [" + .node.title + "](" + .node.url + ")"')
-          
-          if [ -z "$posts" ]; then
-            echo "Error: No valid latest posts found!"
-            exit 1
-          fi
-
-          echo -e "<!-- BLOG-POST-LIST:START -->\n$posts\n<!-- BLOG-POST-LIST:END -->" > latest_post.md
-          
-          sed -i "/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\$(cat latest_post.md)" README.md
-
-      - name: "📤 Commit & Push Updates"
+      - name: "📤 Commit and Push Changes"
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add README.md
-          git commit -m "Updated latest Hashnode blog posts" || exit 0
+          git commit -m "Updated latest blog posts from Hashnode"
           git push
