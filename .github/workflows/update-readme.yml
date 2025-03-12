@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "📥 Fetching Repository Contents"
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
 
       - name: "📚 Fetch Latest Hashnode Posts"
         run: |
@@ -35,7 +35,7 @@ jobs:
           BLOG_POSTS=$(cat latest_blogs.md | sed ':a;N;$!ba;s/\n/\\n/g')
 
           # Ensure content is properly inserted in README
-          sed -i '/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n'"$BLOG_POSTS"'\n<!-- BLOG-POST-LIST:END -->' README.md
+          sed -i '/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n\n'"$BLOG_POSTS"'\n\n<!-- BLOG-POST-LIST:END -->' README.md
 
           # Print README to verify changes
           echo "Updated README.md Preview:"
@@ -47,12 +47,11 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git pull --rebase origin main  # Fetch latest changes
           
-          # Check for changes
-          git status
-          if git diff --quiet; then
-            echo "No changes to commit."
-          else
+          # Check for changes before committing
+          if [[ -n $(git status --porcelain) ]]; then
             git add README.md
             git commit -m "Updated latest blog posts from Hashnode"
             git push origin main
+          else
+            echo "No changes to commit."
           fi
