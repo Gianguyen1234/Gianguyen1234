@@ -1,62 +1,24 @@
-name: Update README with Latest Hashnode Posts
+name: "📚 latest Blog"
 
 on:
-  schedule:
-    - cron: "0 * * * *"  # Runs every hour
   workflow_dispatch:
+  schedule:
+    - cron:  "0 * * * *" # Runs every hour, on the hour
 
 jobs:
-  update-readme:
+  update_blogs:
+    name: "Update With Latest Blogs"
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: "📥  Fetching Repository Contents"
+        uses: actions/checkout@main
 
-      - name: Fetch latest blog posts from Hashnode API
+      - name: "📚  Hashnode Updater"
+        uses: "varunsridharan/action-hashnode-blog@1.1.1"
+        with:
+          USERNAME: "rahulblg" # Hashnode Username
+          COUNT: 4 # MAX Visisble
+          STYLE: "blog-left"
+          BLOG_URL: "https://harrypage.hashnode.dev/"
         env:
-          HASHNODE_TOKEN: ${{ secrets.HASHNODE_PAT }}  # Store your Hashnode PAT as a GitHub Secret
-        run: |
-          # Make API request with authentication
-          response=$(curl -s -X GET "https://api.hashnode.com/v1/posts" \
-            -H "Authorization: Bearer $HASHNODE_TOKEN" \
-            -H "Content-Type: application/json")
-
-          # Debugging: Print API response
-          echo "Hashnode API Response: $response"
-
-          # Extract the latest 5 posts (titles & URLs)
-          posts=$(echo "$response" | jq -r '.posts[:5] | map("🔗 [" + .title + "](" + .url + ")") | join("\n")')
-
-          # Ensure data exists
-          if [ -z "$posts" ]; then
-            echo "Error: No valid latest posts found!"
-            exit 1
-          fi
-
-          # Debugging: Print extracted posts
-          echo "Latest Posts:"
-          echo "$posts"
-
-          # Save to a file
-          echo "$posts" > latest_posts.md
-
-      - name: Update README
-        run: |
-          posts=$(cat latest_posts.md)
-
-          if [ -z "$posts" ]; then
-            echo "Error: No latest posts found, skipping README update."
-            exit 1
-          fi
-
-          sed -i "/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n$posts\n<!-- BLOG-POST-LIST:END -->" README.md
-
-      - name: Commit and Push Changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          git add README.md
-          git commit -m "Updated latest Hashnode posts" || exit 0
-          git push
+          GITHUB_TOKEN: ${{ secrets.HASHNODE_PAT }}
