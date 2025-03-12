@@ -12,59 +12,51 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Fetch latest blog post
+      - name: Fetch latest blog post from Hashnode API
+        env:
+          HASHNODE_TOKEN: ${{ secrets.HASHNODE_PAT }}  # Store your Hashnode PAT as a GitHub Secret
         run: |
-          # Fetch the latest post from Hashnode API
-          response=$(curl -s "https://api.hashnode.com/v1/posts?page=1&perPage=1")
+          # Make API request with authentication
+          response=$(curl -s -X GET "https://api.hashnode.com/v1/posts?page=1&perPage=1" \
+            -H "Authorization: Bearer $HASHNODE_TOKEN" \
+            -H "Content-Type: application/json")
 
-          # Debugging: Print the API response
+          # Debugging: Print API response
           echo "Hashnode API Response: $response"
 
-          # Extract the latest post title and URL (Assuming the response includes a URL)
+          # Extract latest post title & URL
           post_title=$(echo "$response" | jq -r '.posts[0].title')
-          post_url="https://hashnode.com/@harrypage" # Adjust this if the API provides a specific post URL
+          post_url=$(echo "$response" | jq -r '.posts[0].url')
 
-          # Ensure the title is not empty
-          if [ -z "$post_title" ] || [ "$post_title" == "null" ]; then
+          # Ensure data exists
+          if [ -z "$post_title" ] || [ -z "$post_url" ]; then
             echo "Error: No valid latest post found!"
             exit 1
           fi
 
-          # Format the post
+          # Format post
           post="🔗 [$post_title]($post_url)"
 
           # Debugging: Print extracted post
           echo "Latest Post: $post"
 
-          # Save the latest post to a file
+          # Save to a file
           echo "$post" > latest_post.md
-
-      - name: Check latest_post.md
-        run: |
-          # Print the content of latest_post.md
-          cat latest_post.md
-          
-          # Ensure latest_post.md is not empty
-          if [ ! -s latest_post.md ]; then
-            echo "Error: latest_post.md is empty!"
-            exit 1
-          fi
 
       - name: Update README
         run: |
-          # Read latest post from file
           post=$(cat latest_post.md)
 
-          # Ensure post content is valid before updating README
           if [ -z "$post" ]; then
             echo "Error: No latest post found, skipping README update."
             exit 1
           fi
 
-          # Replace content inside <!-- BLOG-POST-LIST:START --> and <!-- BLOG-POST-LIST:END -->
           sed -i "/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n$post\n<!-- BLOG-POST-LIST:END -->" README.md
 
       - name: Commit and Push Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
