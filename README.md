@@ -32,13 +32,14 @@
     </td>
     <td valign="top" width="50%">
     </td>
-  </tr>
-</table>
-
          
 <!-- BLOG-POST-LIST:START -->
 
 <!-- BLOG-POST-LIST:END -->
+
+  </tr>
+</table>
+
 
 # 📊 GitHub Stats:
  
