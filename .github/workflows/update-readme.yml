@@ -14,26 +14,52 @@ jobs:
 
       - name: Fetch latest blog post
         run: |
-          curl -X POST https://api.hashnode.com/ \
-          -H "Content-Type: application/json" \
-          --data '{ "query": "{ user(username: \"harrypage\") { publication { posts(page: 0) { title, url } } } }" }' \
-          | jq -r '.data.user.publication.posts[0] | "🔗 [" + .title + "](" + .url + ")"' > latest_post.md
+          # Fetch the latest post from Hashnode API
+          response=$(curl -X POST https://api.hashnode.com/ \
+            -H "Content-Type: application/json" \
+            --data '{ "query": "{ user(username: \"harrypage\") { publication { posts(page: 0) { title, url } } } }" }' )
 
-      - name: Update README
+          # Debugging: Print the API response
+          echo "Hashnode API Response: $response"
+
+          # Extract the latest post title and URL
+          post=$(echo "$response" | jq -r '.data.user.publication.posts[0] | "🔗 [" + .title + "](" + .url + ")"')
+
+          # Debugging: Print extracted post
+          echo "Latest Post: $post"
+
+          # Ensure we have a valid post before writing to file
+          if [ -z "$post" ] || [ "$post" == "🔗 []()" ]; then
+            echo "Error: No valid latest post found!"
+            exit 1
+          fi
+
+          # Save the latest post to a file
+          echo "$post" > latest_post.md
+
+      - name: Check latest_post.md
         run: |
-          # Debug: Show latest post content
+          # Print the content of latest_post.md
           cat latest_post.md
           
-          # Store latest post in a variable
-          post=$(cat latest_post.md)
-
-          # Check if latest_post.md is empty
-          if [ -z "$post" ]; then
+          # Ensure latest_post.md is not empty
+          if [ ! -s latest_post.md ]; then
             echo "Error: latest_post.md is empty!"
             exit 1
           fi
 
-          # Replace the latest post section in README.md
+      - name: Update README
+        run: |
+          # Read latest post from file
+          post=$(cat latest_post.md)
+
+          # Ensure post content is valid before updating README
+          if [ -z "$post" ]; then
+            echo "Error: No latest post found, skipping README update."
+            exit 1
+          fi
+
+          # Replace content inside <!-- BLOG-POST-LIST:START --> and <!-- BLOG-POST-LIST:END -->
           sed -i "/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n$post\n<!-- BLOG-POST-LIST:END -->" README.md
 
       - name: Commit and Push Changes
