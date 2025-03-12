@@ -31,6 +31,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
+          git pull --rebase origin main  # Fetch the latest changes to avoid conflicts
           git add README.md
-          git commit -m "Updated latest blog posts from Hashnode"
-          git push
+          git commit -m "Updated latest blog posts from Hashnode" || echo "No changes to commit"
+          git push origin main || (git pull --rebase origin main && git push origin main)
