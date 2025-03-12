@@ -31,9 +31,9 @@
       </picture>
     </td>
     <td valign="top" width="50%">
-      <!-- BLOG-POST-LIST:START -->
-      🔗 [Placeholder Title](https://hashnode.com/)
-      <!-- BLOG-POST-LIST:END -->
+<!-- BLOG-POST-LIST:START -->
+🔗 []()
+<!-- BLOG-POST-LIST:END -->
     </td>
   </tr>
 </table>
