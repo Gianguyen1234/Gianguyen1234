@@ -15,24 +15,26 @@ jobs:
       - name: Fetch latest blog post
         run: |
           # Fetch the latest post from Hashnode API
-          response=$(curl -X POST https://api.hashnode.com/ \
-            -H "Content-Type: application/json" \
-            --data '{ "query": "{ user(username: \"harrypage\") { publication { posts(page: 0) { title, url } } } }" }' )
+          response=$(curl -s "https://api.hashnode.com/v1/posts?page=1&perPage=1")
 
           # Debugging: Print the API response
           echo "Hashnode API Response: $response"
 
-          # Extract the latest post title and URL
-          post=$(echo "$response" | jq -r '.data.user.publication.posts[0] | "🔗 [" + .title + "](" + .url + ")"')
+          # Extract the latest post title and URL (Assuming the response includes a URL)
+          post_title=$(echo "$response" | jq -r '.posts[0].title')
+          post_url="https://hashnode.com/@harrypage" # Adjust this if the API provides a specific post URL
 
-          # Debugging: Print extracted post
-          echo "Latest Post: $post"
-
-          # Ensure we have a valid post before writing to file
-          if [ -z "$post" ] || [ "$post" == "🔗 []()" ]; then
+          # Ensure the title is not empty
+          if [ -z "$post_title" ] || [ "$post_title" == "null" ]; then
             echo "Error: No valid latest post found!"
             exit 1
           fi
+
+          # Format the post
+          post="🔗 [$post_title]($post_url)"
+
+          # Debugging: Print extracted post
+          echo "Latest Post: $post"
 
           # Save the latest post to a file
           echo "$post" > latest_post.md
