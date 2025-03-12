@@ -18,20 +18,26 @@ jobs:
           RESPONSE=$(curl -s -X POST https://gql.hashnode.com \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer ${{ secrets.HASHNODE_PAT }}" \
-            --data '{"query":"{ user(username: \"harrypage\") { publications(first: 1) { edges { node { title, posts(first: 5) { edges { node { title, url } } } } } } } }"}')
+            --data '{"query":"{ user(username: \"harrypage\") { publications(first: 1) { edges { node { posts(first: 5) { edges { node { title, url } } } } } } } }"}')
+
           echo "Hashnode API Response: $RESPONSE"
-          BLOG_POSTS=$(echo "$RESPONSE" | jq -r '.data.user.publications.edges[0].node.posts.edges[] | "🔗 [" + .node.title + "]( " + .node.url + " )"')
-          echo "$BLOG_POSTS" > latest_blogs.md
+
+          # Extract and format blog posts
+          echo "$RESPONSE" | jq -r '.data.user.publications.edges[0].node.posts.edges[] | "🔗 [" + .node.title + "](" + .node.url + ")"' > latest_blogs.md
 
       - name: "📄 Update README with Latest Blogs"
         run: |
-          sed -i '/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n'$BLOG_POSTS'\n<!-- BLOG-POST-LIST:END -->' README.md
+          # Prepare content for README update
+          BLOG_POSTS=$(awk '{print $0 "<br>"}' latest_blogs.md)
+
+          # Ensure content is properly inserted in the README
+          sed -i '/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n'"$BLOG_POSTS"'\n<!-- BLOG-POST-LIST:END -->' README.md
 
       - name: "📤 Commit and Push Changes"
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git pull --rebase origin main  # Fetch the latest changes to avoid conflicts
+          git pull --rebase origin main  # Fetch latest changes
           git add README.md
           git commit -m "Updated latest blog posts from Hashnode" || echo "No changes to commit"
           git push origin main || (git pull --rebase origin main && git push origin main)
