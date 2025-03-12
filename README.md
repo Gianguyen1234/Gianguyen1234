@@ -22,11 +22,14 @@
 # 💻 Tech Stack:
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./Skills_Animation_Dark.gif">
+  <source media="(prefers-color-scheme: light)" srcset="./Skills_Animation_White.gif">
+  <img align="left" alt="GIF description" src="./Skills_Animation_White.gif">
 </picture>
-
-
+ 
 # 📊 GitHub Stats:
+ 
 ![](https://github-readme-streak-stats.herokuapp.com/?user=gianguyen1234&theme=dark&hide_border=false)   ![](https://github-readme-stats.vercel.app/api/top-langs/?username=gianguyen1234&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
+
 
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=gianguyen1234&theme=radical&no-frame=true&no-bg=false&margin-w=4)
