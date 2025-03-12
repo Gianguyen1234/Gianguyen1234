@@ -16,7 +16,7 @@ jobs:
       - name: "📚  Hashnode Updater"
         uses: "varunsridharan/action-hashnode-blog@1.1.1"
         with:
-          USERNAME: "rahulblg" # Hashnode Username
+          USERNAME: "harrypage" # Hashnode Username
           COUNT: 4 # MAX Visisble
           STYLE: "blog-left"
           BLOG_URL: "https://harrypage.hashnode.dev/"
