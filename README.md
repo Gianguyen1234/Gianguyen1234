@@ -19,8 +19,7 @@
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=gianguyen1234&show_icons=true&theme=radical)
 
-# 💻 Tech Stack & 📝 Latest Blog Post
-
+**# 💻 Tech Stack & 📝 Latest Blog Post
 <table>
   <tr>
     <td valign="top" width="50%">
@@ -38,7 +37,7 @@
 <!-- BLOG-POST-LIST:END -->
 
   </tr>
-</table>
+</table>**
 
 
 # 📊 GitHub Stats:
