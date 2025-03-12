@@ -1,0 +1,27 @@
+name: Update README with Latest Hashnode Post
+on:
+  schedule:
+    - cron: "0 * * * *"  # Runs every hour
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Fetch latest blog post
+        run: |
+          curl -X POST https://api.hashnode.com/ \
+          -H "Content-Type: application/json" \
+          --data '{ "query": "{ user(username: \"harrypage\") { publication { posts(page: 0) { title, url } } } }" }' \
+          | jq -r '.data.user.publication.posts[0] | "🔗 [" + .title + "](" + .url + ")"' > latest_post.md
+      - name: Update README
+        run: |
+          sed -i '/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n'$(cat latest_post.md)'\n<!-- BLOG-POST-LIST:END -->' README.md
+      - name: Commit and push
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Updated latest Hashnode post" || exit 0
+          git push
