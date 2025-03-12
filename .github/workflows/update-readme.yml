@@ -31,11 +31,11 @@ jobs:
 
       - name: "📄 Update README with Latest Blogs"
         run: |
-          # Read latest blogs from file
-          BLOG_POSTS=$(cat latest_blogs.md | sed ':a;N;$!ba;s/\n/\\n/g')
+         # Convert Markdown links into an HTML list format
+          BLOG_POSTS=$(cat latest_blogs.md | awk '{print "<li>" $0 "</li>"}' | tr '\n' ' ')
 
-          # Ensure content is properly inserted in README
-          sed -i '/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n\n'"$BLOG_POSTS"'\n\n<!-- BLOG-POST-LIST:END -->' README.md
+         # Ensure content is properly inserted in README
+          sed -i '/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n<ul>'"$BLOG_POSTS"'</ul>\n<!-- BLOG-POST-LIST:END -->' README.md
 
           # Print README to verify changes
           echo "Updated README.md Preview:"
