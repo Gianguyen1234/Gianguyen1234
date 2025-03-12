@@ -3,22 +3,23 @@ name: "📚 latest Blog"
 on:
   workflow_dispatch:
   schedule:
-    - cron:  "0 * * * *" # Runs every hour, on the hour
+    - cron: "0 * * * *" # Runs every hour, on the hour
 
 jobs:
   update_blogs:
     name: "Update With Latest Blogs"
     runs-on: ubuntu-latest
     steps:
-      - name: "📥  Fetching Repository Contents"
-        uses: actions/checkout@main
+      - name: "📥 Fetching Repository Contents"
+        uses: actions/checkout@v3
 
-      - name: "📚  Hashnode Updater"
+      - name: "📚 Hashnode Updater"
         uses: "varunsridharan/action-hashnode-blog@1.1.1"
         with:
-          USERNAME: "harrypage" # Hashnode Username
-          COUNT: 4 # MAX Visisble
+          USERNAME: "harrypage" # Your correct Hashnode username
+          COUNT: 4 # Number of latest posts to display
           STYLE: "blog-left"
           BLOG_URL: "https://harrypage.hashnode.dev/"
         env:
-          GITHUB_TOKEN: ${{ secrets.HASHNODE_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HASHNODE_TOKEN: ${{ secrets.HASHNODE_PAT }} # Use Hashnode PAT if required
