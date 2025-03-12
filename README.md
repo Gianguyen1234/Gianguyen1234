@@ -32,7 +32,7 @@
     </td>
     <td valign="top" width="50%">
 <!-- BLOG-POST-LIST:START -->
-🔗 []()
+
 <!-- BLOG-POST-LIST:END -->
     </td>
   </tr>
