@@ -19,12 +19,25 @@
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=gianguyen1234&show_icons=true&theme=radical)
 
-# 💻 Tech Stack:
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./Skills_Animation_Dark.gif">
-  <source media="(prefers-color-scheme: light)" srcset="./Skills_Animation_White.gif">
-  <img align="left" alt="GIF description" src="./Skills_Animation_White.gif">
-</picture>
+# 💻 Tech Stack & 📝 Latest Blog Post
+
+<table>
+  <tr>
+    <td valign="top" width="50%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="./Skills_Animation_Dark.gif">
+        <source media="(prefers-color-scheme: light)" srcset="./Skills_Animation_White.gif">
+        <img align="left" alt="GIF description" src="./Skills_Animation_White.gif">
+      </picture>
+    </td>
+    <td valign="top" width="50%">
+      <!-- BLOG-POST-LIST:START -->
+      🔗 [Placeholder Title](https://hashnode.com/)
+      <!-- BLOG-POST-LIST:END -->
+    </td>
+  </tr>
+</table>
+
  
 # 📊 GitHub Stats:
  
