@@ -22,22 +22,37 @@ jobs:
 
           echo "Hashnode API Response: $RESPONSE"
 
-          # Extract and format blog posts
+          # Extract blog post titles and URLs, format them with line breaks
           echo "$RESPONSE" | jq -r '.data.user.publications.edges[0].node.posts.edges[] | "🔗 [" + .node.title + "](" + .node.url + ")"' > latest_blogs.md
+
+          # Print extracted blog posts for debugging
+          echo "Extracted Blog Posts:"
+          cat latest_blogs.md
 
       - name: "📄 Update README with Latest Blogs"
         run: |
-          # Prepare content for README update
-          BLOG_POSTS=$(awk '{print $0 "<br>"}' latest_blogs.md)
+          # Read latest blogs from file
+          BLOG_POSTS=$(cat latest_blogs.md | sed ':a;N;$!ba;s/\n/\\n/g')
 
-          # Ensure content is properly inserted in the README
+          # Ensure content is properly inserted in README
           sed -i '/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n'"$BLOG_POSTS"'\n<!-- BLOG-POST-LIST:END -->' README.md
+
+          # Print README to verify changes
+          echo "Updated README.md Preview:"
+          cat README.md | grep -A 10 "<!-- BLOG-POST-LIST:START -->"
 
       - name: "📤 Commit and Push Changes"
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git pull --rebase origin main  # Fetch latest changes
-          git add README.md
-          git commit -m "Updated latest blog posts from Hashnode" || echo "No changes to commit"
-          git push origin main || (git pull --rebase origin main && git push origin main)
+          
+          # Check for changes
+          git status
+          if git diff --quiet; then
+            echo "No changes to commit."
+          else
+            git add README.md
+            git commit -m "Updated latest blog posts from Hashnode"
+            git push origin main
+          fi
