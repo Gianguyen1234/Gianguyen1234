@@ -53,7 +53,7 @@ jobs:
 
           # Check for changes before committing
           if [[ -n $(git status --porcelain) ]]; then
-            git add README.md
+            git add README.md latest_blogs.md  # Ensure latest_blogs.md is added
             git commit -m "Updated latest blog posts from Hashnode"
             git push origin main
           else
