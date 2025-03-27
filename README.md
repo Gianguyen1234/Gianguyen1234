@@ -35,7 +35,7 @@
     </td>
          
 <!-- BLOG-POST-LIST:START -->
-<ul><li>🔗 [MVVM with Jetpack Compose:  CRUD App](https://harrypage.hashnode.dev/mvvm-with-jetpack-compose-crud-app)</li> <li>🔗 [Câu lệnh cài và chạy website trên WSL](https://harrypage.hashnode.dev/cau-lenh-cai-va-chay-website-tren-wsl)</li> <li>🔗 [install and use Google Chrome on Ubuntu running inside WSL](https://harrypage.hashnode.dev/install-and-use-google-chrome-on-ubuntu-running-inside-wsl)</li> <li>🔗 [Set up mkcert HTTPS on your PHP web server running on WSL (Windows Subsystem for Linux)](https://harrypage.hashnode.dev/set-up-mkcert-https-on-your-php-web-server-running-on-wsl-windows-subsystem-for-linux)</li> <li>🔗 [Solving mkcert HTTPS Certificate Issue in WSL & Windows Chrome](https://harrypage.hashnode.dev/solving-mkcert-https-certificate-issue-in-wsl-windows-chrome)</li> </ul>
+<ul><li>🔗 [Building a Personalized Telegram Chatbot with Python and Gemini 2.0 Flash](https://harrypage.hashnode.dev/building-a-personalized-telegram-chatbot-with-python-and-gemini-20-flash)</li> <li>🔗 [MVVM with Jetpack Compose:  CRUD App](https://harrypage.hashnode.dev/mvvm-with-jetpack-compose-crud-app)</li> <li>🔗 [Câu lệnh cài và chạy website trên WSL](https://harrypage.hashnode.dev/cau-lenh-cai-va-chay-website-tren-wsl)</li> <li>🔗 [install and use Google Chrome on Ubuntu running inside WSL](https://harrypage.hashnode.dev/install-and-use-google-chrome-on-ubuntu-running-inside-wsl)</li> <li>🔗 [Set up mkcert HTTPS on your PHP web server running on WSL (Windows Subsystem for Linux)](https://harrypage.hashnode.dev/set-up-mkcert-https-on-your-php-web-server-running-on-wsl-windows-subsystem-for-linux)</li> </ul>
 <!-- BLOG-POST-LIST:END -->
 
   </tr>
