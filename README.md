@@ -1,22 +1,99 @@
-# Enthusiastic Developer| Blogger| Youtuber
+<div align="center">
+  
+# 👋 Hello, I'm Holy_Dev 
 
-## 🌐 Socials: [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/20553682)   
+### **Full-Stack Developer | Tech Blogger | Content Creator**
 
-<a href="https://www.youtube.com/@dev-maniac2349">
-    <img alt="youtube channel" title="Youtube" src="https://custom-icon-badges.demolab.com/badge/@holy_dev-red.svg?logo=slyyoutube&logoColor=white"/>
-</a>
+<img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="400"/>
 
-<div id="header" align="center">
-  <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
 </div>
 
-## 👋 Hi! I'm Holy_Dev, an enthusiastic developer with an insatiable appetite for learning and exploring new technologies. I thrive on the thrill of solving complex problems and developing new skills with each project. 
+## 🔮 My Coding Philosophy
 
-### Profile: https://thaonguyen-portfolio.vercel.app/
+> *"I transform coffee into code and chaos into clarity."*
 
-### Relax, sitback and enjoy coding!
+- 🚀 Building scalable, elegant solutions
+- 📚 Continuous learning enthusiast
+- 🎥 Sharing knowledge through content creation
+- 💡 Passionate about clean code architecture
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=gianguyen1234&show_icons=true&theme=radical)
+---
+
+## 🌌 Connect With Me
+
+<div align="center">
+  
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@dev-maniac2349)
+[![StackOverflow](https://img.shields.io/badge/Stack_Overflow-FE7A16?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/20553682)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://thaonguyen-portfolio.vercel.app/)
+
+</div>
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend Magic
+<span>
+  <img src="https://skillicons.dev/icons?i=html,css,react,nextjs,typescript,tailwind,bootstrap,materialui" />
+</span>
+
+### Backend Artistry
+<span>
+  <img src="https://skillicons.dev/icons?i=php,laravel,kotlin,nodejs,express,fastapi,mongodb,mysql,postgres" />
+</span>
+
+### DevOps & Tools
+<span>
+  <img src="https://skillicons.dev/icons?i=git,ubuntu,docker,aws,githubactions" />
+</span>
+
+---
+
+## 📈 GitHub Stats
+
+<div align="center">
+  
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Gianguyen1234&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true)
+  
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Gianguyen1234&layout=compact&theme=radical&hide_border=true&langs_count=8)
+
+![GitHub Streak](https://streak-stats.demolab.com?user=Gianguyen1234&theme=radical&hide_border=true)
+
+</div>
+
+---
+
+## 🌠 Currently Exploring
+
+- ☁️ Cloud Architecture (AWS/GCP)
+- 🤖 Machine Learning Fundamentals
+- ⚛️ Advanced React Patterns
+- 🔗 Web3 & Blockchain Concepts
+
+---
+
+## ✨ Fun Facts
+
+- I can solve Rubik's cube in under 2 minutes
+- My first program was a Battleship game in Python
+- I built my first webapp at 14
+
+---
+
+<div align="center">
+  
+![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=FF7D7D&center=true&vCenter=true&width=500&lines=Code+is+my+canvas;Turning+ideas+into+reality;Debugging+by+day%2C+Creating+by+night)
+  
+</div>
+
+## ✨ Fun Fact
+
+When I'm not coding, you'll find me creating tech tutorials or exploring the latest developer tools!
+
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF2D00&center=true&vCenter=true&width=435&lines=Relax%2C+sit+back+and+enjoy+coding!" alt="Typing SVG" />
+</div>
 
 # 💻 Tech Stack & 📝 Latest Blog Post
 <table>
@@ -41,13 +118,8 @@
 </table>
 
 
-# 📊 GitHub Stats:
- 
-![](https://github-readme-streak-stats.herokuapp.com/?user=gianguyen1234&theme=dark&hide_border=false)   ![](https://github-readme-stats.vercel.app/api/top-langs/?username=gianguyen1234&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
-
-
 ## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=gianguyen1234&theme=radical&no-frame=true&no-bg=false&margin-w=4)
+![](https://github-profile-trophy.vercel.app/?username=Gianguyen1234&theme=radical&no-frame=true&no-bg=true&margin-w=4)
 
 ### 🔝 Top Contributed Repo
 ![](https://github-contributor-stats.vercel.app/api?username=Gianguyen1234&limit=5&theme=dark&combine_all_yearly_contributions=true)
