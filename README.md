@@ -10,12 +10,12 @@
 
 ## 🔮 My Coding Philosophy
 
-> *"I transform coffee into code and chaos into clarity."*
+> *"I don't just write code – I craft digital experiences. Every bug is a puzzle waiting to be solved, every project a blank canvas for innovation."*
 
-- 🚀 Building scalable, elegant solutions
-- 📚 Continuous learning enthusiast
-- 🎥 Sharing knowledge through content creation
-- 💡 Passionate about clean code architecture
+- ### Building scalable, elegant solutions
+- ### Continuous learning enthusiast
+- ### Sharing knowledge through content creation
+- ### Passionate about clean code architecture
 
 ---
 
@@ -54,9 +54,8 @@
 
 <div align="center">
   
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Gianguyen1234&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Gianguyen1234&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true) ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Gianguyen1234&layout=compact&theme=radical&hide_border=true&langs_count=8)
   
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Gianguyen1234&layout=compact&theme=radical&hide_border=true&langs_count=8)
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=Gianguyen1234&theme=radical&hide_border=true)
 
@@ -66,18 +65,10 @@
 
 ## 🌠 Currently Exploring
 
-- ☁️ Cloud Architecture (AWS/GCP)
-- 🤖 Machine Learning Fundamentals
-- ⚛️ Advanced React Patterns
-- 🔗 Web3 & Blockchain Concepts
-
----
-
-## ✨ Fun Facts
-
-- I can solve Rubik's cube in under 2 minutes
-- My first program was a Battleship game in Python
-- I built my first webapp at 14
+- ### ☁️ Cloud Architecture (AWS/GCP)
+- ### 🤖 Machine Learning Fundamentals
+- ### ⚛️ Advanced React Patterns
+- ### 🔗 Web3 & Blockchain Concepts
 
 ---
 
@@ -89,11 +80,13 @@
 
 ## ✨ Fun Fact
 
-When I'm not coding, you'll find me creating tech tutorials or exploring the latest developer tools!
+### When I'm not coding, you'll find me creating tech tutorials or exploring the latest developer tools!
 
 <div align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF2D00&center=true&vCenter=true&width=435&lines=Relax%2C+sit+back+and+enjoy+coding!" alt="Typing SVG" />
 </div>
+
+---
 
 # 💻 Tech Stack & 📝 Latest Blog Post
 <table>
