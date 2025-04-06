@@ -10,7 +10,7 @@
 
 ## 🔮 My Coding Philosophy
 
-> *"I don't just write code – I craft digital experiences. Every bug is a puzzle waiting to be solved, every project a blank canvas for innovation."*
+>  *"I don't just write code – I craft digital experiences. Every bug is a puzzle waiting to be solved, every project a blank canvas for innovation."*
 
 - ### Building scalable, elegant solutions
 - ### Continuous learning enthusiast
