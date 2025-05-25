@@ -1,9 +1,9 @@
 name: "📚 Latest Blog Update"
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 * * * *" # Runs every hour, on the hour
+# on:
+#   workflow_dispatch:
+#   schedule:
+#     - cron: "0 * * * *" # Runs every hour, on the hour
 
 jobs:
   update_blogs:
