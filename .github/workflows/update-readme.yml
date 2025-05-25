@@ -15,10 +15,11 @@ jobs:
 
       - name: "📚 Fetch Latest Hashnode Posts"
         run: |
+          # Replace 'your-hashnode-host' with your actual Hashnode host (e.g., 'blog.yourdomain.com')
           RESPONSE=$(curl -s -X POST https://gql.hashnode.com \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer ${{ secrets.HASHNODE_PAT }}" \
-            --data '{"query":"{ publication(host: \"your-hashnode-host\") { posts(first: 5) { edges { node { title, url } } } }"}')
+            --data '{"query":"query { publication(host: \"your-hashnode-host\") { posts(first: 5) { edges { node { title url } } } }"}')
 
           echo "Hashnode API Response: $RESPONSE"
 
@@ -53,7 +54,7 @@ jobs:
 
           # Check for changes before committing
           if [[ -n $(git status --porcelain) ]]; then
-            git add README.md latest_blogs.md  # Ensure latest_blogs.md is added
+            git add README.md latest_blogs.md
             git commit -m "Updated latest blog posts from Hashnode"
             git push origin main
           else
