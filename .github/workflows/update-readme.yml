@@ -51,6 +51,7 @@ jobs:
           git pull --rebase origin main
           git stash pop || true  # Apply stash (if exists)
 
+
           # Check for changes before committing
           if [[ -n $(git status --porcelain) ]]; then
             git add README.md latest_blogs.md  # Ensure latest_blogs.md is added
