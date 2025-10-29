@@ -63,12 +63,12 @@
 
 ---
 
-## 🌠 Currently Exploring
+## Currently Exploring
 
-- ### ☁️ Cloud Architecture (AWS/GCP)
-- ### 🤖 Machine Learning Fundamentals
-- ### ⚛️ Advanced React Patterns
-- ### 🔗 Web3 & Blockchain Concepts
+- ### Cloud Architecture (AWS/GCP)
+- ### Machine Learning Fundamentals
+- ### Advanced React Patterns
+- ### Web3 & Blockchain Concepts
 
 ---
 
