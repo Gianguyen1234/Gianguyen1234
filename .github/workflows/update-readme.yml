@@ -1,62 +1,15 @@
-name: "📚 Latest Blog Update"
-
-# on:
-#   workflow_dispatch:
-#   schedule:
-#     - cron: "0 * * * *" # Runs every hour, on the hour
+name: Update blog posts
+on:
+  schedule:
+    - cron: "0 * * * *" # mỗi giờ
+  workflow_dispatch:
 
 jobs:
-  update_blogs:
-    name: "Update With Latest Blogs"
+  update-readme:
     runs-on: ubuntu-latest
     steps:
-      - name: "📥 Fetching Repository Contents"
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-      - name: "📚 Fetch Latest Hashnode Posts"
-        run: |
-          # Replace 'your-hashnode-host' with your actual Hashnode host (e.g., 'blog.yourdomain.com')
-          RESPONSE=$(curl -s -X POST https://gql.hashnode.com \
-            -H "Content-Type: application/json" \
-            -H "Authorization: Bearer ${{ secrets.HASHNODE_PAT }}" \
-            --data '{"query":"query { publication(host: \"your-hashnode-host\") { posts(first: 5) { edges { node { title url } } } }"}')
-
-          echo "Hashnode API Response: $RESPONSE"
-
-          # Extract blog post titles and URLs, format them with line breaks
-          echo "$RESPONSE" | jq -r '.data.publication.posts.edges[] | "🔗 [" + .node.title + "](" + .node.url + ")"' > latest_blogs.md
-
-          # Print extracted blog posts for debugging
-          echo "Extracted Blog Posts:"
-          cat latest_blogs.md
-
-      - name: "📄 Update README with Latest Blogs"
-        run: |
-          # Convert Markdown links into an HTML list format
-          BLOG_POSTS=$(cat latest_blogs.md | awk '{print "<li>" $0 "</li>"}' | tr '\n' ' ')
-
-          # Ensure content is properly inserted in README
-          sed -i '/<!-- BLOG-POST-LIST:START -->/,/<!-- BLOG-POST-LIST:END -->/c\<!-- BLOG-POST-LIST:START -->\n<ul>'"$BLOG_POSTS"'</ul>\n<!-- BLOG-POST-LIST:END -->' README.md
-
-          # Print README to verify changes
-          echo "Updated README.md Preview:"
-          cat README.md | grep -A 10 "<!-- BLOG-POST-LIST:START -->"
-
-      - name: "📤 Commit and Push Changes"
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-
-          # Stash changes before pulling updates
-          git stash --include-untracked
-          git pull --rebase origin main
-          git stash pop || true  # Apply stash (if exists)
-
-          # Check for changes before committing
-          if [[ -n $(git status --porcelain) ]]; then
-            git add README.md latest_blogs.md
-            git commit -m "Updated latest blog posts from Hashnode"
-            git push origin main
-          else
-            echo "No changes to commit."
-          fi
+      - uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          feed_list: "https://holydev.uk/rss.xml"
