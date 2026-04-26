@@ -56,13 +56,18 @@ I want to build something similar, even if starting small.
 </span>
 
 ---
-
 ## GitHub Stats
 
 <div align="center">
-  
 
-![GitHub Streak](https://streak-stats.demolab.com?user=Gianguyen1234&theme=radical&hide_border=true)
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=Gianguyen1234&show_icons=true&theme=radical&hide_border=true" />
+  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gianguyen1234&layout=compact&theme=radical&hide_border=true" />
+
+</div>
+
+<div align="center">
+
+  <img src="https://streak-stats.demolab.com?user=Gianguyen1234&theme=radical&hide_border=true&random=123" />
 
 </div>
 
