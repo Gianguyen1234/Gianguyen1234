@@ -66,8 +66,8 @@ I want to build something similar, even if starting small.
 </div>
 
 <div align="center">
-
-  <img src="https://streak-stats.demolab.com?user=Gianguyen1234&theme=radical&hide_border=true&random=123" />
+  
+<img src="https://streak-stats.demolab.com?user=Gianguyen1234&theme=radical&hide_border=true&random=123" />
 
 </div>
 
