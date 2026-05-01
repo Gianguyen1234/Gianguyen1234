@@ -7,6 +7,8 @@
 
 </div>
 
+# If you are using Tails OS or planning to install it, please avoid using balenaEtcher. I'm sharing this because I learned the hard way :(( I've already used it!
+
 ## About
 
 - I'm learning backend step by step (currently: **Spring Boot**)
